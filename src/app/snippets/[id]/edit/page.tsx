@@ -1,5 +1,5 @@
 import { db } from "@/db";
-import Link from "next/link";
+//import Link from "next/link";
 import { notFound } from "next/navigation";
 import SnippetEditForm from "@/components/snippet-edit-form";
 
