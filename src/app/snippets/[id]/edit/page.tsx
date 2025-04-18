@@ -11,9 +11,9 @@ interface SnippetEditPageProps {
 export type paramsType = Promise<{ id: string }>;
 
 //export default async function SnippetEditPage(props: SnippetEditPageProps) {
-    export default async function SnippetEditPage(props: { params: paramsType }){
+    export default async function SnippetEditPage(props: Promise<SnippetEditPageProps>){
 
-    const {id} = props.params;
+    const {id} = (await props).params;
     //await is very important otherwise snippet object is not going to get data
     const snippet =await db.snippet.findFirst({
         where: { id: parseInt(id) }
