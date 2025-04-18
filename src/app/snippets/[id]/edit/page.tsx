@@ -8,7 +8,10 @@ interface SnippetEditPageProps {
         id: string
     };
 }
-export default async function SnippetEditPage(props: SnippetEditPageProps) {
+export type paramsType = Promise<{ id: string }>;
+
+//export default async function SnippetEditPage(props: SnippetEditPageProps) {
+    export default async function SnippetEditPage(props: { params: paramsType }){
 
     const {id} = props.params;
     //await is very important otherwise snippet object is not going to get data
